@@ -12,7 +12,7 @@ namespace BSIT3L_Movies.Controllers
             // Sample movie data
             _movies = new List<Movie>
             {
-                new Movie { Id = 1, Name = "Titanic", Rating = "5" },
+                new Movie { Id = 1, Name = "Titanicsssssss", Rating = "5" },
                 new Movie { Id = 2, Name = "Inception", Rating = "4" },
                 new Movie { Id = 3, Name = "The Shawshank Redemption", Rating = "5" }
             };

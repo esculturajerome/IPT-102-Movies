@@ -1,36 +1,37 @@
-﻿using System;
-using BSIT3L_Movies.Models;
+ using BSIT3L_Movies.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
-namespace BSIT3L_Movies.Controllers
+namespace BSIT3L_Movies.Models
 {
-	public class MoviesController : Controller
+    public class MoviesController : Controller
     {
-        private List<MovieViewModel> _movies;
-        public MoviesController()
-		{
-            // Sample movie data
-            _movies = new List<MovieViewModel>
-            {
-               new MovieViewModel { Id = 1, Name = "Titanic", Rating = "5", ReleaseYear = 1997, Genre = "Romance/Drama" },
-            new MovieViewModel { Id = 2, Name = "Inception", Rating = "4", ReleaseYear = 2010, Genre = "Science Fiction/Thriller" },
-            new MovieViewModel { Id = 3, Name = "The Shawshank Redemption", Rating = "5", ReleaseYear = 1994, Genre = "Drama" },
-            };
-        }
-        public ActionResult Random()
+        [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
+        public class Modelscontroller : Controller
         {
-            var movie = new MovieViewModel() { Name = "Avatar", Rating = "5" };
-            return View(movie);
-        }
-        public ActionResult GetMovie(int id)
-        {
-            var movie = _movies.Find(m => m.Id == id);
-            if (movie == null)
-                return NotFound();
-            return View(movie);
+           
+            }
 
+            public IActionResult GetMovies()
+            {
+                MovieViewModel movie = new MovieViewModel
+                {
+                    Id = 1,
+                    Name = "JOHN WICK",
+                    Image = "movie.1.jpg",
+                    Teaser = "\r\nAn ex-hitman comes out of retirement to track down the gangsters that took everything from him. With New York City as his bullet-riddled playground, JOHN WICK (Keanu Reeves) is a fresh and stylized take on the \"assassin genre\". ",
+
+
+                };
+
+                return View(movie);
+            }
+
+            private string GetDebuggerDisplay()
+            {
+                return ToString();
+            }
         }
 
     }
-}
 

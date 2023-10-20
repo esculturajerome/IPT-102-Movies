@@ -1,0 +1,31 @@
+﻿@model List<MovieViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Rating</th>
+            <th>Release Year</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Id</td>
+                <td ><a href = "/movies/getmovie/@movie.Id" > @movie.Name </a></td>
+                <td>@movie.Rating</td>
+                <td>@movie.ReleaseYear</td>
+                <td>@movie.Genre</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

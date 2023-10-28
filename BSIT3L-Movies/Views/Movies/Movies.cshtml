@@ -1,83 +1,56 @@
-model BSIT3L_Movies.Models.MovieViewModel
-
-
-<!DOCTYPE html>
-<html>
+m<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Movies</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-func.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie store</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/forms.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon"
+          href="/images/movie_filter_FILL0_wght400_GRAD0_opsz48.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap"
+          rel="stylesheet" />
 </head>
 <body>
-    <div id="shell">
-        <div id="header">
-            <div class="social">
-                <span>VISIT US ON:</span>
-                <ul>
-                    <li><a class="twitter" href="https://twitter.com/home">twitter</a></li>
-                    <li><a class="facebook" href="https://www.facebook.com/">facebook</a></li>
-                </ul>
+    <nav class="nav-bar">
+        <div class="logo">Movie List</div>
+        <ul class="nav-link">
+            <li><a class="active" href="/index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li>
+                <a href="#">Admin <i class="fa fa-caret-down"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="container">
+        <div class="movie-detail w-80 m-auto">
+            <div class="img-container">
+                <img alt="image" src="/css/movie1.jpg">
             </div>
-            <div id="sub-navigation">
-                <h1>MOVIE DETAILS</h1>
-            </div>
-            <div id="news">
-                <div class="head">
-                    <p class="text-right"><a href="@Url.Action("Index", "Home")">Back</a></p>
-                </div>
-                <div class="content">
-                    <img src="css/images/movie.1.jpeg" alt="">
-                    <h4>@Model.Name</h4>tion</p>
-             
-                </div>
-            </div>
-            @* <div id="news">
-                    <div class="head">
-                        <p class="text-right"><a href="@Url.Action("Index", "Home")">Back</a></p>
-                    </div>
-                    <div class="content">
-                        <p class="date">2023</p>
-                        <h4>BIRD BOX</h4>
-                        <p>&quot;Bird Box is a 2018 American post-apocalyptic horror thriller film directed by Susanne Bier and written by Eric Heisserer, based on the 2014 novel of the same name by Josh Malerman. The film follows the character Malorie Hayes, played by Sandra Bullock, as she tries to protect herself and two children from entities which cause people who look at them to kill themselves... </p>
-                        <a href="https://en.wikipedia.org/wiki/Bird_Box_(film)">Read more</a>
-                        <img src="css/images/movie.6.jpeg" alt="" />
-                    </div>
 
-                </div>*@
-            <div id="coming">
-                <div class="head">
-                    <h3><strong>COMING SOON !</strong></h3>
-                    <p class="text-right"><a href="@Url.Action("Index", "Movies")"></a></p>
-                </div>
-                <div class="content">
-                    <h4>W</h4>
-                    <a href="https://youtu.be/EHGljhKT16I?si=NK6V7ILaOueeane"><img src="css/images/movie2.jpg" alt="" />The Croods" is a funny animation with the eternal theme of acceptance of what is new. Grug is a good caveman that based on the experience of his former neighbors, believes that he can protect his family locking them inside a cave. When he meets Guy with new ideas, there is a hilarious friction and competition.</a>
-                    <p> &quot;</p>
-                    
-                </div>
-                <div class="cl">&nbsp;</div>
-                <div class="content">
-                    <h4>WISH</h4>
-                    <img src="css/images/movie3.jpg" alt="" />
-                    <p>&quot; At long last, Sony finally appears to be hinting at a Spider-Man for its shared universe, with Andrew Garfield high on the list of possibilities. After the shock cancelation of The Amazing Spider-Man 3, ..</p>
-                    
-                </div>
-                <div class="content">
-                    <h4>NAPELEON</h4>
-                    <a href="https://www.youtube.com/watch?v=otNh9bTjXWg"><img src="css/images/movie4.jpeg" alt="" /></a>
-                    <p> &quot; iccup (Tawin Yavapolkul) is a Norse teenager from the island of Berk, where fighting dragons is a way of life. His progressive views and weird sense of humor make him a misfit, ....</p>
-                   
-                </div>
-                <div class="cl">&nbsp;</div>
+            <div class="detail-container">
+                <h3>id</h3>
+                <h4>Name</h4>
+                <h4>Rating</h4>
+                <h4>Teaser.....................................</h4>
+               
             </div>
-            <div class="cl">&nbsp;</div>
         </div>
-        <div id="footer">
-            <p class="lf">Copyright &copy; 2023 <a href="#">Justimbaste</a> - All Rights Reserved</p>
-            <div style="clear:both;"></div>
+        <div class="w-80 m-auto">
+            <a href="/index.html" class="btn btn-default">Back</a>
         </div>
-    </div>
+
+    </section>
+    <footer>&#169; 2022 Ravindra Devrani</footer>
 </body>
 </html>

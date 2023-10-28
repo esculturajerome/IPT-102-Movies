@@ -3,269 +3,58 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<
+
+<!DOCTYPE html>
+<html>
 <head>
-    <style>
-        div. container {
-            background-color: #ffffff;
-        }
-
-            div. container p {
-                font-family: Arial;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: normal;
-                text-decoration: none;
-                text-transform: none;
-                color: #000000;
-                background-color: #ffffff;
-            }
-    </style>
-
     <title>Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-func.js"></script>
 </head>
 
-    <body style="background-color:powderblue;">
-
-    
-    <p style="background-color:Tomato;"></p>
-    <div id="shell">
-        <div id="header">
-            <div class="social">
-                <span>FOLLOW US ON:</span>
-                <ul>
-                    <li><a class="twitter" href="https://twitter.com/home">twitter</a></li>
-                    <li><a class="facebook" href="https://www.facebook.com/">facebook</a></li>
-                </ul>
-            </div>
-            <div id="sub-navigation">
-                <h1>MOVIE LIST</h1>
-                          
-                    
-            </div>
-            <div id="main">
-                <div id="content">
-                    <div class="box">
-                        <div class="head">
-                            <h2></h2>
-
-                        </div>
-                        @foreach (var movie in Model)
-                        {
-                            <div class="movie">
-                                <div class="movie-image"><a href="@movie.Teaser"> <img src="@movie.Image" alt=""> <span class="play"><span class="name">@movie.Name</span></span> </a> </div>
-                                <a href="@Url.Action("Movies", "Movies")">Movie Details</a>
-                                <div class="rating">
-                                    <p>RATING: @movie.Rating</p>
-                                    <div class="stars">
-                                        <div class="stars-in"> </div>
-                                    </div>
-                                    <span class="comments">10</span>
+<body style="background-color: powderblue;">
+    <div class="container">
+        <h1 class="mt-4">MOVIE LIST</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="media">
+                                <img src="@movie.Image" class="mr-3" alt="@movie.Name" width="100">
+                                <div class="media-body">
+                                    <h5 class="mt-0">@movie.Name</h5>
+                                    <a href="@movie.Teaser" class="btn btn-primary" target="_blank">Watch Trailer</a>
                                 </div>
-                                <div class="cl">&nbsp;</div>
                             </div>
-
-
-
-                        }
-                        @*                     <div class="movie">
-                        <div class="movie-image"><a href="https://youtu.be/C0BMx-qxsP4?si=H2KzoDByvwrH6vOR"><img src="movie.1.jpg" alt="" /> <span class="play"><span class="name">BALLERINA</span></span> </a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">50</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"><a href="https://youtu.be/EHGljhKT16I?si=NK6V7ILaOueeane-"><img src="movie2.jpg" alt="" /> <span class="play"><span class="name">SPIDER MAN 3</span></span> </a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">20</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <a href="https://www.youtube.com/watch?v=e5wUilOeOmg"><img src="movie.3.jpg" alt="" /><span class="play"><span class="name">JOHN WICK 4</span></span> </a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">32</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image">  <a href="https://youtu.be/oKiYuIsPxYk?si=7rwzi3kWI3RdEKkz"><img src="movie.4.jpg" alt="" /><span class="play"><span class="name">NOWHERE</span></span></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">12</span>
-                        </div>
-                        </div>
-                        <div class="movie last">
-                        <div class="movie-image"> <a href="https://youtu.be/ip_CYHdyUBs?si=JfGXXweFnV2fs9Zt"><img src="movies.5.jpg" alt="" /><span class="play"><span class="name">THE NUN II</span></span> </a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">12</span>
-                        </div>
-                        </div>
-                        <div class="cl">&nbsp;</div>
-                        </div>
-                        <div class="box">
-                        <div class="head">
-                        <h2>LATEST MOVIES</h2>
-                        <p class="text-right"><a href="/Movies"></a></p>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image">  <a href="https://youtu.be/RdjO0p4GJPA?si=QFMXF1W9uvRWNCAF"><img src="movie.6.jpg" alt="" /><span class="play"><span class="name">AQUAMAN 2</span></span></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">12</span>s
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <a href="https://youtu.be/99k3u9ay1gs?si=av7AoYxjCnEj6Ec"><img src="css/images/movie7.jpg" alt="" /><span class="play"><span class="name">HEART OF STONE</span></span> </a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </divq
-                        <span class="comments">12</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <a href="https://youtu.be/yoLFk4JK_RM?si=pEaeujTLKOrqIqlT"><img src="movie.7.jpg" alt="" /><span class="play"><span class="name">THE POPE'S EXORCIST</span></span> </a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in">T</div>
-                        </div>
-                        <span class="comments">5</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <a href="https://youtu.be/1d0Zf9sXlHk?si=VTNHJgnYSObIAYnd"><img src="movie8.jpg" alt="" /><span class="play"><span class="name">EXTRACTION 2</span></span> </a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in">JOHN WICK </div>
-                        </div>
-                        <span class="comments">12</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <span class="play"><span class="name">THE CROODS</span></span> <a href="#"><img src="movie9.jpg" alt="" /></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">14</span>
-                        </div>
-                        </div>
-                        <div class="movie last">
-                        <div class="movie-image"> <span class="play"><span class="name">SPIDERMAN 3</span></span> <a href="#"><img src="css/images/movie10.jpg" alt="" /></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">12</span>
-                        </div>
-                        </div>
-                        <div class="cl">&nbsp;</div>
-                        </div>
-                        <div class="box">
-                        <div class="head">
-                        <h2>TOP RATED MOVIES</h2>
-                        <p class="text-right"><a href="/Movies"></a></p>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <span class="play"><span class="name">HOW TO TRAIN YOUR DRAGON</span></span> <a href="#"><img src="movie11.jpg" alt="" /></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">29</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <span class="play"><span class="name">THE EXPENDABLES</span></span> <a href="#"><img src="movie12.jpg" alt="" /></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">10</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <span class="play"><span class="name">HACKSAW RIDGE</span></span> <a href="#"><img src="movie13.jpg" alt="" /></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">65</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <span class="play"><span class="name">AMERICAN SNIPER</span></span> <a href="#"><img src="movie14.jpg" alt="" /></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">48</span>
-                        </div>
-                        </div>
-                        <div class="movie">
-                        <div class="movie-image"> <span class="play"><span class="name">LONE SURVIVOR</span></span> <a href="#"><img src="css/images/movie15.jpg" alt="" /></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">25</span>
-                        </div>
-                        </div>
-                        <div class="movie last">
-                        <div class="movie-image"> <span class="play"><span class="name">ENOLA HOLMES</span></span> <a href="#"><img src="css/images/mov10.jpg" alt="" /></a> </div>
-                        <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                        <div class="stars-in"> </div>
-                        </div>
-                        <span class="comments">55</span>
-                        </div>
-                        </div>*@
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </div>
-            </div>
-            <div class="cl">&nbsp;</div>
-        </div>
-        <div id="footer">
-            <p class="lf">Copyright &copy; 2023 <a href="#"></a> - All Rights Reserved</p>
-            <div style="clear:both;"></div>
-        </div>
+                        </td>
+                        <td>
+                            <div class="rating">
+                                <p>RATING: @movie.Rating</p>
+                                <div class="stars">
+                                    <div class="stars-in"></div>
+                                </div>
+                                <span class="comments">CLICK</span>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div id="footer">
+        <p class="lf">Copyright &copy; 2023 <a href="#"></a> - All Rights Reserved</p>
+        <div style="clear:both;"></div>
     </div>
 </body>
 </html>

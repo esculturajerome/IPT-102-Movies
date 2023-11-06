@@ -1,31 +1,60 @@
-﻿@model List<MovieViewModel>
+@model List<MovieViewModel>
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-func.js"></script>
+</head>
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Rating</th>
-            <th>Release Year</th>
-            <th>Genre</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var movie in Model)
-        {
-            <tr>
-                <td>@movie.Id</td>
-                <td ><a href = "/movies/getmovie/@movie.Id" > @movie.Name </a></td>
-                <td>@movie.Rating</td>
-                <td>@movie.ReleaseYear</td>
-                <td>@movie.Genre</td>
-            </tr>
-        }
-    </tbody>
-</table>
-
+<body style="background-color: powderblue;">
+    <div class="container">
+        <h1 class="mt-4">MOVIE LIST</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="media">
+                                <img src="@movie.Image" class="mr-3" alt="@movie.Name" width="100">
+                                <div class="media-body">
+                                    <h5 class="mt-0">@movie.Name</h5>
+                                    <a href="@movie.Teaser" class="btn btn-primary" target="_blank">Watch Trailer</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rating">
+                                <p>RATING: @movie.Rating</p>
+                                <div class="stars">
+                                    <div class="stars-in"></div>
+                                </div>
+                                <span class="comments">CLICK</span>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div id="footer">
+        <p class="lf">Copyright &copy; 2023 <a href="#"></a> - All Rights Reserved</p>
+        <div style="clear:both;"></div>
+    </div>
+</body>
+</html>

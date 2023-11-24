@@ -18,7 +18,9 @@ public class HomeController : Controller
     {
         _movies = new List<MovieViewModel>
         {
-            new MovieViewModel { Id = 1, Name = "JOHN WICK", Rating = "13", Image = "css/movie2.jpg", Teaser = "https://youtu.be/EHGljhKT16I?si=NK6V7ILaOueeane-"},
+           
+            new MovieViewModel { Id = 1, Name = "JOHN WICK", Rating = "13", Image = "css/movie1.jpg", Teaser = "https://www.youtube.com/watch?v=C0BMx-qxsP4"},
+            new MovieViewModel { Id = 2, Name = "THE CROODS",Rating = "6", Image = "css/movie2.jpg", Teaser = "https://youtu.be/EHGljhKT16I?si=NK6V7ILaOueeane-" },
             new MovieViewModel { Id = 3, Name = "SPIDER MAN 3", Rating = "12", Image = "css/movie3.jpg", Teaser = "https://www.youtube.com/watch?v=e5wUilOeOmg" },
             new MovieViewModel { Id = 4, Name = "HOW TO TRAIN YOUR DRAGON", Rating = "12-", Image = "css/movie4.jpg", Teaser = "https://youtu.be/oKiYuIsPxYk?si=7rwzi3kWI3RdEKkz" },
             new MovieViewModel { Id = 5, Name = "THE EXPENDABLES 2", Rating = "13", Image = "css/movie5.jpg", Teaser = "https://youtu.be/ip_CYHdyUBs?si=JfGXXweFnV2fs9Zt" },

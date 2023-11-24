@@ -1,9 +1,3 @@
-@model List<MovieViewModel>
-
-@{
-    ViewData["Title"] = "Home Page";
-}
-
 <html>
 <head>
     <title>Home</title>
@@ -22,6 +16,8 @@
                 <tr>
                     <th>Movie</th>
                     <th>Rating</th>
+                  
+               
                 </tr>
             </thead>
             <tbody>
@@ -34,23 +30,25 @@
                                 <div class="media-body">
                                     <h5 class="mt-0">@movie.Name</h5>
                                     <a href="@movie.Teaser" class="btn btn-primary" target="_blank">Watch Trailer</a>
+                                   
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="rating">
                                 <p>RATING: @movie.Rating</p>
+                               
                                 <div class="stars">
                                     <div class="stars-in"></div>
                                 </div>
-                                <span class="comments">CLICK</span>
+                          
                             </div>
                         </td>
                     </tr>
 
-                        }
+                        
                         @*                     <div class="movie">
-                        <div class="movie-image"><a href="https://youtu.be/C0BMx-qxsP4?si=H2KzoDByvwrH6vOR"><img src="movie.1.jpg" alt="" /> <span class="play"><span class="name">BALLERINA</span></span> </a> </div>
+                <div class="movie-image"><a href="https://youtu.be/C0BMx-qxsP4?si=H2KzoDByvwrH6vOR"><img src="css/movie.1.jpg" alt="" /> <span class="play"><span class="name">JOHN WICK</span></span> </a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -60,7 +58,7 @@
                         </div>
                         </div>
                         <div class="movie">
-                        <div class="movie-image"><a href="https://youtu.be/EHGljhKT16I?si=NK6V7ILaOueeane-"><img src="movie2.jpg" alt="" /> <span class="play"><span class="name">SPIDER MAN 3</span></span> </a> </div>
+                <div class="movie-image"><a href="https://youtu.be/EHGljhKT16I?si=NK6V7ILaOueeane-"><img src="css/movie2.jpg" alt="" /> <span class="play"><span class="name">THE CROODS</span></span> </a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -70,7 +68,7 @@
                         </div>
                         </div>
                         <div class="movie">
-                        <div class="movie-image"> <a href="https://www.youtube.com/watch?v=e5wUilOeOmg"><img src="movie.3.jpg" alt="" /><span class="play"><span class="name">JOHN WICK 4</span></span> </a> </div>
+                <div class="movie-image"> <a href="https://www.youtube.com/watch?v=e5wUilOeOmg"><img src="css/movie.3.jpg" alt="" /><span class="play"><span class="name">SPIDER MAN 3</span></span> </a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -80,7 +78,7 @@
                         </div>
                         </div>
                         <div class="movie">
-                        <div class="movie-image">  <a href="https://youtu.be/oKiYuIsPxYk?si=7rwzi3kWI3RdEKkz"><img src="movie.4.jpg" alt="" /><span class="play"><span class="name">NOWHERE</span></span></a> </div>
+                <div class="movie-image">  <a href="https://youtu.be/oKiYuIsPxYk?si=7rwzi3kWI3RdEKkz"><img src="css/movie.4.jpg" alt="" /><span class="play"><span class="name">HOW TO TRAIN YOUR DRAGON</span></span></a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -90,7 +88,7 @@
                         </div>
                         </div>
                         <div class="movie last">
-                        <div class="movie-image"> <a href="https://youtu.be/ip_CYHdyUBs?si=JfGXXweFnV2fs9Zt"><img src="movies.5.jpg" alt="" /><span class="play"><span class="name">THE NUN II</span></span> </a> </div>
+                <div class="movie-image"> <a href="https://youtu.be/ip_CYHdyUBs?si=JfGXXweFnV2fs9Zt"><img src="css/movies.5.jpg" alt="" /><span class="play"><span class="name">THE EXPENDABLES 2</span></span> </a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -107,7 +105,7 @@
                         <p class="text-right"><a href="/Movies"></a></p>
                         </div>
                         <div class="movie">
-                        <div class="movie-image">  <a href="https://youtu.be/RdjO0p4GJPA?si=QFMXF1W9uvRWNCAF"><img src="movie.6.jpg" alt="" /><span class="play"><span class="name">AQUAMAN 2</span></span></a> </div>
+                <div class="movie-image">  <a href="https://youtu.be/RdjO0p4GJPA?si=QFMXF1W9uvRWNCAF"><img src="css/movie.6.jpg" alt="" /><span class="play"><span class="name">HACKSAW RIDGE</span></span></a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -117,7 +115,7 @@
                         </div>
                         </div>
                         <div class="movie">
-                        <div class="movie-image"> <a href="https://youtu.be/99k3u9ay1gs?si=av7AoYxjCnEj6Ec"><img src="css/images/movie7.jpg" alt="" /><span class="play"><span class="name">HEART OF STONE</span></span> </a> </div>
+                <div class="movie-image"> <a href="https://youtu.be/99k3u9ay1gs?si=av7AoYxjCnEj6Ec"><img src="css/movie7.jpg" alt="" /><span class="play"><span class="name">AMERICAN SNIPER</span></span> </a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -127,7 +125,7 @@
                         </div>
                         </div>
                         <div class="movie">
-                        <div class="movie-image"> <a href="https://youtu.be/yoLFk4JK_RM?si=pEaeujTLKOrqIqlT"><img src="movie.7.jpg" alt="" /><span class="play"><span class="name">THE POPE'S EXORCIST</span></span> </a> </div>
+                <div class="movie-image"> <a href="https://youtu.be/yoLFk4JK_RM?si=pEaeujTLKOrqIqlT"><img src="css/movie.8.jpg" alt="" /><span class="play"><span class="name">lONE SURVIVOR</span></span> </a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -137,7 +135,7 @@
                         </div>
                         </div>
                         <div class="movie">
-                        <div class="movie-image"> <a href="https://youtu.be/1d0Zf9sXlHk?si=VTNHJgnYSObIAYnd"><img src="movie8.jpg" alt="" /><span class="play"><span class="name">EXTRACTION 2</span></span> </a> </div>
+                        <div class="movie-image"> <a href="https://youtu.be/1d0Zf9sXlHk?si=VTNHJgnYSObIAYnd"><img src="css/movie9.jpg" alt="" /><span class="play"><span class="name">EXTRACTION 2</span></span> </a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -147,7 +145,7 @@
                         </div>
                         </div>
                         <div class="movie">
-                        <div class="movie-image"> <span class="play"><span class="name">THE CROODS</span></span> <a href="#"><img src="movie9.jpg" alt="" /></a> </div>
+                        <div class="movie-image"> <span class="play"><span class="name">ENOLA HOLMES</span></span> <a href="#"><img src="css/movie11.jpg" alt="" /></a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -157,7 +155,7 @@
                         </div>
                         </div>
                         <div class="movie last">
-                        <div class="movie-image"> <span class="play"><span class="name">SPIDERMAN 3</span></span> <a href="#"><img src="css/images/movie10.jpg" alt="" /></a> </div>
+                        <div class="movie-image"> <span class="play"><span class="name">SPIDERMAN 3</span></span> <a href="#"><img src="css/movie10.jpg" alt="" /></a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -214,7 +212,7 @@
                         </div>
                         </div>
                         <div class="movie">
-                        <div class="movie-image"> <span class="play"><span class="name">LONE SURVIVOR</span></span> <a href="#"><img src="css/images/movie15.jpg" alt="" /></a> </div>
+                        <div class="movie-image"> <span class="play"><span class="name">LONE SURVIVOR</span></span> <a href="#"><img src="movie15.jpg" alt="" /></a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">
@@ -224,7 +222,7 @@
                         </div>
                         </div>
                         <div class="movie last">
-                        <div class="movie-image"> <span class="play"><span class="name">ENOLA HOLMES</span></span> <a href="#"><img src="css/images/mov10.jpg" alt="" /></a> </div>
+                        <div class="movie-image"> <span class="play"><span class="name">ENOLA HOLMES</span></span> <a href="#"><img src="movie15.jpg" alt="" /></a> </div>
                         <div class="rating">
                         <p>RATING</p>
                         <div class="stars">

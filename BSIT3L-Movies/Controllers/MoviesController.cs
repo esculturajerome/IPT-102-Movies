@@ -1,4 +1,3 @@
-
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using BSIT3L_Movies.Models;

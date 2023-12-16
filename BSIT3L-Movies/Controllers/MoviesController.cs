@@ -1,17 +1,26 @@
-using System;
-using BSIT3L_Movies.Models;
-using Microsoft.AspNetCore.Mvc;
 
-namespace BSIT3L_Movies.Controllers
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using BSIT3L_Movies.Models;
+using System.Collections.Generic;
+using static System.Net.WebRequestMethods;
+using Microsoft.Extensions.FileSystemGlobbing;
+using System.Diagnostics.Metrics;
+using System.IO;
+
+
+namespace BSIT3L_Movies.Controllers;
+
+
+public class HomeController : Controller
 {
-    public class MoviesController : Controller
+
+    private readonly List<MovieViewModel> _movies;
+
+    public HomeController(ILogger<HomeController> logger)
     {
-        private List<MovieViewModel> _movies;
-        public MoviesController()
+        _movies = new List<MovieViewModel>
         {
-            // Sample movie data
-            _movies = new List<MovieViewModel>
-            {
             new MovieViewModel { Id = 1, Name = "JOHN WICK", Rating = "13", Image = "css/movie1.jpg", Teaser = "https://www.youtube.com/watch?v=C0BMx-qxsP4", Description = "An ex-hitman comes out of retirement to track down the gangsters that took everything from him. With New York City as his bullet-riddled playground, JOHN WICK (Keanu Reeves) is a fresh and stylized take on the 'assassin genre'." },
             new MovieViewModel { Id = 2, Name = "THE CROODS",Rating = "6", Image = "css/movie2.jpg", Teaser = "https://youtu.be/EHGljhKT16I?si=NK6V7ILaOueeane-", Description ="Prehistoric family the Croods live in a particularly dangerous moment in time. Patriarch Grug, his mate, Ugga, teenage daughter, son Thunk, and feisty Gran gather food by day and huddle together in a cave at night.\"." },
             new MovieViewModel { Id = 3, Name = "SPIDER MAN 3", Rating = "12", Image = "css/movie3.jpg", Teaser = "https://www.youtube.com/watch?v=e5wUilOeOmg",Description ="Peter Parker  and M.J. seem to finally be on the right track in their complicated relationship, but trouble looms for the superhero and his lover. Peter's Spider-Man suit turns black and takes control of him, not only giving Peter enhanced power but also bringing out the dark side of his personality. Peter must overcome the suit's influence as two supervillains, Sandman and Venom, rise up to destroy him and all those he holds dear" },
@@ -28,22 +37,26 @@ namespace BSIT3L_Movies.Controllers
            new MovieViewModel { Id = 14, Name = "ALIVE", Rating = "13", Image = "css/movie14.jpg", Teaser = "https://youtu.be/jQ8CCg1tOqc?si=b1wUQdyq2XgfGYb2",Description ="While a grisly virus ravages a Korean city, Joon-woo tries to stay safe by locking himself inside his apartment. Just as he loses hope, he discovers another survivor." },
            new MovieViewModel { Id = 15, Name = "AVENGERS ENDGAME", Rating = "12", Image = "css/movie15.jpeg", Teaser = "https://youtu.be/TcMBFSGVi1c?si=xffYoe-CYiUDvcpj",Description ="Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the universe." },
            
-            };
-        }
-        public ActionResult Random()
-        {
-            var movie = new MovieViewModel() { Name = "Avatar", Rating = "13" };
-            return View(movie);
-        }
-        public ActionResult GetMovie(int id)
-        {
-            var movie = _movies.Find(m => m.Id == id);
-            if (movie == null)
-                return NotFound();
-            return View(movie);
+           
 
-        }
-
+        };
     }
 
+    public IActionResult Index()
+    {
+        return View(_movies);
+    }
+
+    public IActionResult Privacy()
+    {
+        return View();
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
 }
+
+

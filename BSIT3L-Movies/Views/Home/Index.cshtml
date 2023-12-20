@@ -16,41 +16,38 @@
                 <tr>
                     <th>Movie</th>
                     <th>Rating</th>
-
-
+                    
+                    <!-- Adding missing closing th tag -->
                 </tr>
             </thead>
             <tbody>
                 @foreach (var movie in Model)
                 {
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <img src="@movie.Image" class="mr-3" alt="@movie.Name" width="100">
-                                <div class="media-body">
-                                    <h5 class="mt-0">@movie.Name</h5>
-                                    <a href="@movie.Teaser" class="btn btn-primary" target="_blank">Watch Trailer</a>
-                        <td>
-                            <button onclick="showDescription('@movie.Description')">Description</button>
-                        </td>
-
-
-
-
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <img src="@movie.Image" class="mr-3" alt="@movie.Name" width="100">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">@movie.Name</h5>
+                                        <a href="@movie.Teaser" class="btn btn-primary" target="_blank">Watch Trailer</a>
+                                            <button onclick="showDescription( '@movie.Description')">Description</button>
+                                    </div>
                                 </div>
-                            
-                       
-                        
-                            <div class="rating">
-                                <p>RATING: @movie.Rating</p>
+                            </td>
+                           
 
-                                <div class="stars">
-                                    <div class="stars-in"></div>
+
+                            <td>
+                                <div class="rating">
+                                    <p>RATING: @movie.Rating</p>
+                                    <div class="stars">
+                                        <div class="stars-in"></div>
+                                    </div>
                                 </div>
+                            </td>
+                        </tr>
 
-                            </div>
-                        
-                    
+
 
 
                     @*                     <div class="movie">
@@ -239,24 +236,15 @@
                 </div>*@
                 }
         
-       
-    
-    <div id="footer">
-        <p class="lf">Copyright &copy; 2023 <a href="#"></a> - All Rights Reserved</p>
-        <div style="clear:both;"></div>
-    </div>
-    <script>
-  // Function to display the description in the modal
-  function showDescription(description) {
-    document.getElementById('descriptionText').innerText = description;
-    document.getElementById('descriptionModal').style.display = 'block';
-  }
-
-  // Function to close the modal
-  function closeModal() {
-    document.getElementById('descriptionModal').style.display = 'none';
-  }
-</script>
+   
+        <script>
+            function showDescription(description) {
+                // Replace this with your logic to display the description
+                alert(description);
+            }
+        </script>
 
 </body>
+   
+ 
 </html>
